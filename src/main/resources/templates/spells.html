@@ -1,0 +1,30 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+	<head>
+	    <title>Spells</title>
+	    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	</head>
+	<body>
+	   	<h1>Spells</h1>
+	   	<p>Bare bone page for retrieve spells</p>
+	   	<div>
+	   		<table>
+	   			<thead>
+	   				<tr>
+		   				<th>ID</th>
+		   				<th>Name</th>
+		   				<th>Level</th>
+		   				<th>School</th>
+	   				</tr>
+	   			</thead>
+	   			<tbody>
+	   				<tr th:each="spell: ${spellList}">
+	   					<td th:utext="${spell.Id}"></td>
+	   					<td th:utext="${spell.Name}"></td>
+	   					<td th:utext="${spell.Level}"></td>
+	   					<td th:utext="${spell.School}"></td>
+	   			</tbody>
+	   		</table>
+	   	</div>
+	</body>
+</html>
