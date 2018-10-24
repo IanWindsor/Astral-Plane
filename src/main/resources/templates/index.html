@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html xmlns:th="http://www.thymeleaf.org">
 	<head>
 		<title>Home :: Astral Plane</title>
 		<meta charset="UTF8">
@@ -19,19 +19,7 @@
 		<!-- <nav class="navbar navbar-dark bg-dark navbar-expand-md container"> -->
 		
 		<div class="container">
-			<nav class="navbar ap-navbar navbar-dark bg-dark navbar-expand-md container">
-				<a class="navbar-brand" href="#">Astral Plane</a>
-				<div class="collapse navbar-collapse">
-					<ul class="navbar-nav mr-auto">
-						<li class="nav-item active">
-							<a class="nav-link" href="#">Home</a>
-						</li>
-						<li class="nav-item">
-							<a class="nav-link" href="spellbook">Spell Book</a>
-						</li>
-					</ul>
-				</div>
-			</nav>
+			<nav th:insert="navigation"></nav>
 			<div id="carouselBanner" class="carousel slide" data-ride="carousel" data-pause="false">
 		  		<div class="carousel-inner">
 		    		<div class="carousel-item active">
@@ -50,17 +38,17 @@
 			</div>
 			<div class="row">
 				<div class="col-md-4">
-					<a href="#" class="card-head text-center">Spell Book
+					<a href="/spells" class="card-head text-center">Spell Book
 						<!-- <img class="card-img-bottom" src="spell-book.svg" alt="Spell Book Icon" />	-->
 					</a>
 				</div>
 				<div class="col-md-4">
-					<a href="#" class="card-head text-center">Spell Book
+					<a href="/spells" class="card-head text-center">Spell Book
 						<!-- <img class="card-img-bottom" src="spell-book.svg" alt="Spell Book Icon" />	-->
 					</a>
 				</div>
 				<div class="col-md-4">
-					<a href="#" class="card-head text-center">Spell Book
+					<a href="/spells" class="card-head text-center">Spell Book
 						<!-- <img class="card-img-bottom" src="spell-book.svg" alt="Spell Book Icon" />	-->
 					</a>
 				</div>

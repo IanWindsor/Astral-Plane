@@ -1,0 +1,40 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+	<head>
+	    <title th:text="${spell.Name} + ' :: Astral Plane'">Title</title>
+	    <meta charset="UTF8">
+		<!-- For "Mobile First" design -->
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<!-- Include Bootstrap and all other required js libraries -->
+		
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
+		<link rel="stylesheet" href="/css/base.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+	</head>
+	<body>
+	   	<h1 th:text="${spell.Name}">Name Header</h1>
+	   	<p>Bare bone page for a single spell</p>
+	   	<div>
+	   		<table>
+	   			<thead>
+	   				<tr>
+		   				<th>ID</th>
+		   				<th>Name</th>
+		   				<th>Level</th>
+		   				<th>School</th>
+	   				</tr>
+	   			</thead>
+	   			<tbody>
+		   				<tr>
+		   					<td th:utext="${spell.Id}"></td>
+		   					<td th:utext="${spell.Name}"></td>
+		   					<td th:utext="${spell.Level}"></td>
+		   					<td th:utext="${spell.School}"></td>
+	   					</tr>				
+		   			</tbody>
+	   		</table>
+	   	</div>
+	</body>
+</html>

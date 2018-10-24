@@ -11,6 +11,8 @@ public class SpellMapper implements RowMapper<SpellModel> {
 	
 	// SQL to Select * from Spells table
 	public static final String BASE_SQL = "SELECT * FROM Spells s";
+	
+	public static final String SINGLE_SPELL_SQL = "SELECT * FROM spells s WHERE s.id = ?";
 
 	@Override
 	public SpellModel mapRow(ResultSet rs, int rowNum) throws SQLException {
