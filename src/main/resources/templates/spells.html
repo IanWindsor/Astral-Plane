@@ -13,34 +13,124 @@
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
 		<script>
-			jQuery(document).ready(function($) {
-			    $("#spellRow").click(function() {
-			    	window.location = $(this).find("a").attr("href");
+			$(document).ready(function() {
+			    
+				$('#spellTableBody tr').click(function() {
+			       window.location = $(this).find("a").attr("href");
 			    });
+			    
+			    $('#resetFormBtn').click(function() {
+			    	$.ajax({
+						type : "GET",
+						url : 'spells',
+						dataType : "json",
+					    crossDomain:true,
+						success : function(data) {
+							
+						},
+						error : function(data) {
+								
+						}
+					});
+			    });
+			    
 			});
+			
+			function clearForm() {
+				alert("Reset button");
+				$.ajax({
+					type : "POST",
+					url : "spells",
+					dataType : "json",
+				    crossDomain:true,
+					success : function(data) {
+						alert("success!");
+					},
+					error : function(data) {
+						alert("failure.");
+					}
+				});
+		    }
 		</script>
 	</head>
 	<body>
 		<div class="container">
 			<div th:insert="navigation"></div>
 	   		<h1>Spells</h1>
-	   		<p>Bare bone page for retrieve spells</p>
+	   		<div id="filters">
+	   			<form action="#" th:action="@{/spells}" th:object="${spellFilterFormModel}" method="post">
+	   			 <!-- Add form objects here
+	   				spellFilteForm is the model of the form
+	   				It maps fields in the form to a model that can be used on the backend
+	   				This is also known as a Command Object in Spring MVC -->
+	   			  <label>Spell Name </label>
+	   			  <input type="text" th:field="*{name}" />
+	   			  <label>Level</label>
+	   			  <select th:field="*{level}">
+	   			  	<option value=""> -- </option>
+	   			  	<option value="0">Cantrip</option>
+	   			  	<option value="1">1st</option> 
+	   			  	<option value="2">2nd</option>
+	   			  	<option value="3">3rd</option>
+	   			  	<option value="4">4th</option>
+	   			  	<option value="5">5th</option>
+	   			  	<option value="6">6th</option>
+	   			  	<option value="7">7th</option>
+	   			  	<option value="8">8th</option>
+	   			  </select> 
+	   			  <label>School</label>
+	   			  <select th:field="*{school}">
+	   			  	<option value=""> -- </option>
+	   			  	<option th:each="school : ${T(iww.astralplane.model.SpellFilterFormModel.schoolsEnum).values()}"
+	   			  			th:value="${school}"
+	   			  			th:text="${school}">
+	   			  	</option>
+	   			  </select>
+	   			  <label>Ritual</label>
+	   			  <select th:field="*{ritual}">
+	   			  	<option value=""> -- </option>
+	   			  	<option value=true>Yes</option>
+	   			  	<option value=false>No</option>
+	   			  </select>
+	   			  <label>Casting Time</label>
+	   			  <select th:field="*{castingTime}">
+	   			  	<option value=""> -- </option>
+	   			  	<option value="1 action">1 action</option>
+	   			  	<option value="1 bonus action">1 bonus action</option>
+	   			  	<option value="1 reaction">1 reaction</option>
+	   			  </select>
+	   			  <input type="submit" value="Submit"/>
+	   			  <input type="button" onclick="location.href='/spells'" value="Clear" >
+	   			</form>
+	   		</div>
 		   	<div>
-		   		<table>
+		   		<table id="spellTable">
 		   			<thead>
 		   				<tr>
-			   				<th>ID</th>
 			   				<th>Name</th>
 			   				<th>Level</th>
 			   				<th>School</th>
+			   				<th>Ritual</th>
+			   				<th>Casting Time</th>
+			   				<th>Components</th>
+			   				<th>Source</th>
 		   				</tr>
 		   			</thead>
-		   			<tbody>
-			   				<tr id="spellRow" th:each="spell: ${spellList}">
-			   					<td><a th:href="@{'spell/' + ${spell.Id}}" th:utext="${spell.Id}">SpellId</a></td>
-			   					<td th:utext="${spell.Name}"></td>
-			   					<td th:utext="${spell.Level}"></td>
-			   					<td th:utext="${spell.School}"></td>
+		   			<tbody id="spellTableBody" >
+			   				<tr th:each="spell: ${spellList}">
+			   					<!--/* thymeleaf is not case sensitive :: spell.name == spell.Name */-->
+			   					<td> <a th:href="@{'spell/' + ${spell.id}}" th:utext="${spell.name}"></a></td>
+			   					<td>
+			   						<!--/* Set name of level 0 spells to Cantrip */-->
+			   						<span th:if="${spell.level == 0}">Cantrip</span>
+			   						<span th:unless="${spell.level == 0}" th:utext="${spell.level}"></span>
+			   					</td>
+			   					<td th:utext="${spell.school}"></td>
+			   					<td th:utext="${spell.ritual}"></td>
+			   					<td th:utext="${spell.castingTime}"></td>
+			   					<td th:utext="${spell.components}"></td>
+			   					<td th:utext="${spell.concentration}"></td>
+			   					<td th:utext="${spell.source}"></td>
 		   					</tr>					
 			   			</tbody>
 		   		</table>

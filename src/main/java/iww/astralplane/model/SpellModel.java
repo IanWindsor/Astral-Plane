@@ -12,6 +12,8 @@ public class SpellModel {
 	private String components;
 	private boolean concentration;
 	private String source;
+	
+	public SpellModel() {}
 
 	public SpellModel(int id, String name, String description, String atHigherLevelsDescription, int level,
 			String school, boolean ritual, String castingTime, String components, boolean concentration,
@@ -28,6 +30,8 @@ public class SpellModel {
 		this.concentration = concentration;
 		this.source = source;
 	}
+	
+	
 
 	public void setId(int id) {
 		this.id = id;

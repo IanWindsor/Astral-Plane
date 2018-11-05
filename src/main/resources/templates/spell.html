@@ -14,9 +14,10 @@
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
 	</head>
 	<body>
-	   	<h1 th:text="${spell.Name}">Name Header</h1>
-	   	<p>Bare bone page for a single spell</p>
-	   	<div>
+		<div class="container">
+			<div th:insert="navigation"></div>
+		   	<h1 th:text="${spell.Name}">Name Header</h1>
+		   	<p>Bare bone page for a single spell</p>   		
 	   		<table>
 	   			<thead>
 	   				<tr>
@@ -24,6 +25,7 @@
 		   				<th>Name</th>
 		   				<th>Level</th>
 		   				<th>School</th>
+		   				<th>Description</th>
 	   				</tr>
 	   			</thead>
 	   			<tbody>
@@ -32,9 +34,10 @@
 		   					<td th:utext="${spell.Name}"></td>
 		   					<td th:utext="${spell.Level}"></td>
 		   					<td th:utext="${spell.School}"></td>
+		   					<td th:utext="${spell.Description}"></td>
 	   					</tr>				
 		   			</tbody>
 	   		</table>
-	   	</div>
+   		</div>
 	</body>
 </html>
