@@ -81,7 +81,7 @@
 	   			  <label>School</label>
 	   			  <select th:field="*{school}">
 	   			  	<option value=""> -- </option>
-	   			  	<option th:each="school : ${T(iww.astralplane.model.SpellFilterFormModel.schoolsEnum).values()}"
+	   			  	<option th:each="school : ${T(astralplane.spell.model.SpellFilterFormModel.schoolsEnum).values()}"
 	   			  			th:value="${school}"
 	   			  			th:text="${school}">
 	   			  	</option>

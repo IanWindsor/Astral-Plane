@@ -1,8 +1,4 @@
-package iww.astralplane.dao;
-
-import iww.astralplane.mapper.SpellMapper;
-import iww.astralplane.model.SpellFilterFormModel;
-import iww.astralplane.model.SpellModel;
+package astralplane.spell.dao;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -14,6 +10,9 @@ import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.jdbc.core.support.JdbcDaoSupport;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
+
+import astralplane.spell.model.SpellFilterFormModel;
+import astralplane.spell.model.SpellModel;
 
 /**
  * Each method established of SQL to be used, parameters needed, and mapper required.

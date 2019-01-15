@@ -1,4 +1,4 @@
-package iww.astralplane.model;
+package astralplane.spell.model;
 
 /**
  * Command Object for filter form on '/spells' template

@@ -1,4 +1,4 @@
-package iww.astralplane.model;
+package astralplane.spell.model;
 
 public class SpellModel {
 	private int id;

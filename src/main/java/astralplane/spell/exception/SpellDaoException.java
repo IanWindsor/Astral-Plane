@@ -1,4 +1,4 @@
-package iww.astralplane.exception;
+package astralplane.spell.exception;
 
 /**
  * Captures Spell Exceptions when retrieving record(s) from Database

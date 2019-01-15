@@ -1,11 +1,11 @@
-package iww.astralplane.mapper;
-
-import iww.astralplane.model.SpellModel;
+package astralplane.spell.dao;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
 import org.springframework.jdbc.core.RowMapper;
+
+import astralplane.spell.model.SpellModel;
 
 /**
  * All SQL statements and Mapping for Spells 
