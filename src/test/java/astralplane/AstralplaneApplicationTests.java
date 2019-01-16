@@ -1,4 +1,4 @@
-package iww.astralplane;
+package astralplane;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
