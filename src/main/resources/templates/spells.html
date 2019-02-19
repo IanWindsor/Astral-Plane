@@ -1,21 +1,23 @@
 <!DOCTYPE HTML>
-<html xmlns:th="http://www.thymeleaf.org">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
 	<head>
 	    <title>Spells :: Astral Plane</title>
 	    <meta charset="UTF8">
 		<!-- For "Mobile First" design -->
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<!-- Include Bootstrap and all other required js libraries -->
 		
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
-		<link rel="stylesheet" href="/css/base.css">
+		<!-- CSS -->
+		<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
+		<link rel="stylesheet" type="text/css" href="/css/base.css">
+		
+		<!-- Include Bootstrap and all other required js libraries -->
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
 		<script>
 			$(document).ready(function() {
 			    
-				$('#spellTableBody tr').click(function() {
+				$('#spell-table-body tr').click(function() {
 			       window.location = $(this).find("a").attr("href");
 			    });
 			    
@@ -36,34 +38,19 @@
 			    
 			});
 			
-			function clearForm() {
-				alert("Reset button");
-				$.ajax({
-					type : "POST",
-					url : "spells",
-					dataType : "json",
-				    crossDomain:true,
-					success : function(data) {
-						alert("success!");
-					},
-					error : function(data) {
-						alert("failure.");
-					}
-				});
-		    }
 		</script>
 	</head>
 	<body>
 		<div class="container">
 			<div th:insert="navigation"></div>
-	   		<h1>Spells</h1>
-	   		<div id="filters">
-	   			<form action="#" th:action="@{/spells}" th:object="${spellFilterFormModel}" method="post">
+	   		<h1 class="as-bg-header as-h1">Spells</h1>
+	   		<div id="filters" >
+	   			<form id="as-spells-form" class="as-bg-form" action="#" th:action="@{/spells}" th:object="${spellFilterFormModel}" method="post">
 	   			 <!-- Add form objects here
 	   				spellFilteForm is the model of the form
 	   				It maps fields in the form to a model that can be used on the backend
 	   				This is also known as a Command Object in Spring MVC -->
-	   			  <label>Spell Name </label>
+	   			  <label>Spell Name</label>
 	   			  <input type="text" th:field="*{name}" />
 	   			  <label>Level</label>
 	   			  <select th:field="*{level}">
@@ -99,12 +86,12 @@
 	   			  	<option value="1 bonus action">1 bonus action</option>
 	   			  	<option value="1 reaction">1 reaction</option>
 	   			  </select>
-	   			  <input type="submit" value="Submit"/>
-	   			  <input type="button" onclick="location.href='/spells'" value="Clear" >
+	   			  <input type="submit" class="btn" value="Submit"/>
+	   			  <input type="button" class="btn" onclick="location.href='/spells'" value="Clear" >
 	   			</form>
 	   		</div>
 		   	<div>
-		   		<table id="spellTable">
+		   		<table class="table as-bg-default" id="spell-table">
 		   			<thead>
 		   				<tr>
 			   				<th>Name</th>
@@ -113,11 +100,12 @@
 			   				<th>Ritual</th>
 			   				<th>Casting Time</th>
 			   				<th>Components</th>
+			   				<th>Concentration</th>
 			   				<th>Source</th>
 		   				</tr>
 		   			</thead>
-		   			<tbody id="spellTableBody" >
-			   				<tr th:each="spell: ${spellList}">
+		   			<tbody id="spell-table-body">
+			   				<tr  th:each="spell: ${spellList}">
 			   					<!--/* thymeleaf is not case sensitive :: spell.name == spell.Name */-->
 			   					<td> <a th:href="@{'spell/' + ${spell.id}}" th:utext="${spell.name}"></a></td>
 			   					<td>

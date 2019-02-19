@@ -1,11 +1,15 @@
 package astralplane.spell.model;
 
+import org.springframework.stereotype.Component;
+
 /**
  * Command Object for filter form on '/spells' template
- * Properties may be different than their Model/Entity counterparts to allow us of Nulls
+ * Properties may be different than their Model/Entity counterparts to allow use of Nulls
  * @author ianww
  *
  */
+
+@Component
 public class SpellFilterFormModel {
 
 	private String name;

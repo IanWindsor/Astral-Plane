@@ -1,3 +1,106 @@
 body {
-	background-color: #6E2113;
+	background-color: #C2C2C2;
 }
+
+.as-bg-header {
+	background-color: #D69129
+;
+}
+
+.as-bg-form {
+	background-color: #D69129;
+}
+
+.as-bg-default {
+	background-color: #992E24;
+}
+
+.as-bg-other {
+	background-color: #342309;
+}
+
+.btn {
+	background-color: #000000;
+	color: #FFFFFF;
+}
+
+/*
+* Spell Table CSS
+*/
+#spell-table {
+	color: #FFFFFF;
+}
+
+#spell-table tr:nth-child(odd) {
+	background-color: #BA372C;
+}
+
+#spell-table tr:nth-child(even) {
+	background-color: #992E24;
+}
+
+ #spell-table-body tr:hover {
+	background-color: #912B22;
+}
+
+#spell-table a {
+	color: #FFFFFF;
+	text-decoration: none !important;
+}
+
+.as-h1 {
+	color: #FFFFFF;
+	margin-bottom: 0px;	
+}
+
+#as-spells-form {
+	color: #FFFFFF;
+}
+
+/*
+* Spell Page CSS
+*/
+#spell-info {
+	color: #FFFFFF;
+}
+
+#spell-info h5 {
+	
+}
+
+.spell-info-divide {
+	border-bottom: 5px solid #912B22;
+	overflow: auto;
+}
+
+/*
+#FFFFFF (WHITE)
+
+ 
+#FD3A0F (Red-Orange)
+
+ 
+#FC7307 (Orange)
+
+ 
+#FBA90A (Mustard-Yellow)
+
+ 
+#000000
+*/
+
+/*
+* #FFFFFF - Body (White)
+
+ 
+#8CCC3E Background Accent (Light Green) 
+
+ 
+#FD622A Buttons, Submissions, etc (Orange)
+
+ 
+#1D66ED Background Accent (Light Blue)
+
+ 
+#0A1B3A Secondary Background (Dark Blue)
+*/

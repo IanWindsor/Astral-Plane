@@ -1,6 +1,17 @@
 package astralplane.spell.model;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity(name="Spell")
+@Table(name="spell")
 public class SpellModel {
+	
+	@Id
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private int id;
 	private String name;
 	private String description;
@@ -29,9 +40,7 @@ public class SpellModel {
 		this.components = components;
 		this.concentration = concentration;
 		this.source = source;
-	}
-	
-	
+	}	
 
 	public void setId(int id) {
 		this.id = id;

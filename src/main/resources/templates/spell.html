@@ -1,14 +1,16 @@
 <!DOCTYPE HTML>
-<html xmlns:th="http://www.thymeleaf.org">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
 	<head>
 	    <title th:text="${spell.Name} + ' :: Astral Plane'">Title</title>
 	    <meta charset="UTF8">
 		<!-- For "Mobile First" design -->
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<!-- Include Bootstrap and all other required js libraries -->
 		
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
-		<link rel="stylesheet" href="/css/base.css">
+		<!--  CSS -->
+		<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
+		<link rel="stylesheet" type="text/css" href="/css/base.css">
+		
+		<!-- Include Bootstrap and all other required js libraries -->
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
@@ -16,28 +18,53 @@
 	<body>
 		<div class="container">
 			<div th:insert="navigation"></div>
-		   	<h1 th:text="${spell.Name}">Name Header</h1>
-		   	<p>Bare bone page for a single spell</p>   		
-	   		<table>
-	   			<thead>
-	   				<tr>
-		   				<th>ID</th>
-		   				<th>Name</th>
-		   				<th>Level</th>
-		   				<th>School</th>
-		   				<th>Description</th>
-	   				</tr>
-	   			</thead>
-	   			<tbody>
-		   				<tr>
-		   					<td th:utext="${spell.Id}"></td>
-		   					<td th:utext="${spell.Name}"></td>
-		   					<td th:utext="${spell.Level}"></td>
-		   					<td th:utext="${spell.School}"></td>
-		   					<td th:utext="${spell.Description}"></td>
-	   					</tr>				
-		   			</tbody>
-	   		</table>
+			<div class="as-bg-default" id="spell-info" >
+			   	<h1 th:text="${spell.Name}" class="as-bg-header as-h1" >Name Header</h1>
+			   	<div class="row">
+			   		<div class="col">
+			   			<h5>Level</h5>
+			   			<p th:utext="${spell.Level}"></p>
+			   		</div>
+			   		<div class="col">
+			   			<h5>Ritual</h5>
+			   			<p th:utext="${spell.Ritual}"></p>
+			   		</div>
+			   		<div class="col">
+			   			<h5>Casting Time</h5>
+			   			<p th:utext="${spell.CastingTime}"></p>
+			   		</div>
+			   		<div class="col">
+			   			<h5>Components</h5>
+			   			<p th:utext="${spell.Components}"></p>
+			   		</div>
+			   		<div class="col">
+			   			<h5>Concentration</h5>
+			   			<p th:utext="${spell.Concentration}"></p>
+			   		</div>
+			   		<div class="col">
+			   			<h5>Source</h5>
+			   			<p th:utext="${spell.Source}"></p>
+			   		</div>		   		
+			   	</div>
+			   	<div class="spell-info-divide"></div>
+			   	<div class="row">
+			   		<div class="col col-sm-3">
+			   			<h5>School</h5>
+			   			<p th:utext="${spell.School}"></p>
+			   		</div>
+			   		<div class="col col-lg-9">
+			   			<h5>Description</h5>
+			   			<p th:utext="${spell.Description}"></p>
+			   		</div>
+			   	</div>
+			   	<div class="spell-info-divide"></div>
+			   	<div class="row">
+			   		<div class="col">
+			   			<h5>At Higher Levels</h5>
+			   			<p th:utext="${spell.atHigherLevelsDescription != null} ? ${spell.atHigherLevelsDescription} : 'None'"></p>
+			   		</div>
+			   	</div>
+	   		</div>
    		</div>
 	</body>
 </html>
