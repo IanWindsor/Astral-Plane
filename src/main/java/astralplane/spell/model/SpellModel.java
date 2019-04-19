@@ -7,7 +7,7 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity(name="Spell")
-@Table(name="spell")
+@Table(name="spells")
 public class SpellModel {
 	
 	@Id

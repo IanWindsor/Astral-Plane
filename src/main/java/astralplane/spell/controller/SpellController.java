@@ -45,8 +45,6 @@ public class SpellController {
 
 	@GetMapping("/spell/{id}")
 	public ModelAndView getSpellView(@PathVariable int id, Model model) {
-		// Eventually move such logic out of the controller and into a service
-		// Keep Controller as accepting REST and model building only
 		SpellModel spell = spellRepository.findById(id)
 				.orElseThrow(() -> new SpellResourceException(id));
 		

@@ -1,18 +1,18 @@
 body {
-	background-color: #C2C2C2;
+	background-color: #B9A7A0;
 }
 
 .as-bg-header {
-	background-color: #D69129
-;
+	background-color: #C55F26;
 }
 
 .as-bg-form {
-	background-color: #D69129;
+	background-color: #C55F26;
+	padding-bottom: 5px;
 }
 
 .as-bg-default {
-	background-color: #992E24;
+	background-color: #794529;
 }
 
 .as-bg-other {
@@ -28,79 +28,68 @@ body {
 * Spell Table CSS
 */
 #spell-table {
-	color: #FFFFFF;
+	color: #DADFE1;
+}
+
+#spell-table thead tr{
+	background-color: #794529 !important;
 }
 
 #spell-table tr:nth-child(odd) {
-	background-color: #BA372C;
+	background-color:  #954519;
 }
 
 #spell-table tr:nth-child(even) {
-	background-color: #992E24;
+	background-color: #794529;
 }
 
  #spell-table-body tr:hover {
-	background-color: #912B22;
+	background-color: #6D3E25;
 }
 
+
 #spell-table a {
-	color: #FFFFFF;
+	color: #DADFE1;
 	text-decoration: none !important;
 }
 
 .as-h1 {
-	color: #FFFFFF;
-	margin-bottom: 0px;	
+	color: #000000;
+	margin: 0px;
 }
 
 #as-spells-form {
-	color: #FFFFFF;
+	color: #000000;
 }
 
 /*
 * Spell Page CSS
 */
 #spell-info {
-	color: #FFFFFF;
+	color: #DADFE1;
 }
 
 #spell-info h5 {
-	
+	margin: 5px 5px 5px 5px;	
+}
+
+#spell-info p {
+	margin: 5px 5px 5px 5px;
 }
 
 .spell-info-divide {
-	border-bottom: 5px solid #912B22;
+	border-bottom: 5px solid #954519;
 	overflow: auto;
 }
 
 /*
-#FFFFFF (WHITE)
+#C55F26
 
- 
-#FD3A0F (Red-Orange)
+#B9A7A0
 
- 
-#FC7307 (Orange)
+#A54D1C
 
- 
-#FBA90A (Mustard-Yellow)
+#794529
 
- 
-#000000
-*/
-
-/*
-* #FFFFFF - Body (White)
-
- 
-#8CCC3E Background Accent (Light Green) 
-
- 
-#FD622A Buttons, Submissions, etc (Orange)
-
- 
-#1D66ED Background Accent (Light Blue)
-
- 
-#0A1B3A Secondary Background (Dark Blue)
+#E5C808
 */

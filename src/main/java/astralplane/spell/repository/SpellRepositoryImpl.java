@@ -33,8 +33,6 @@ public class SpellRepositoryImpl implements SpellRepositoryCustom {
 		if(spellFilterModel.getName() != null && spellFilterModel.getName() != "")
 			predicates.add(builder.like(builder.lower(root.get("name")), "%" + spellFilterModel.getName().toLowerCase() + "%"));
 		
-		//TODO: Level filtering not working as expected - Return value IS what is expected
-		// Look into issue with applying model to form
 		if(spellFilterModel.getLevel() != null)
 			predicates.add(builder.equal(root.get("level"), spellFilterModel.getLevel()));
 		

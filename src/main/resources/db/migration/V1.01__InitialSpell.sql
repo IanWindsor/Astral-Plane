@@ -1,4 +1,4 @@
-CREATE TABLE spell (
+CREATE TABLE Spells (
 	ID SERIAL PRIMARY KEY,
 	Name VARCHAR(100) NOT NULL,
 	Description TEXT NOT NULL,
@@ -12,5 +12,5 @@ CREATE TABLE spell (
 	Source VARCHAR(50) NOT NULL
 );
 
-COPY spell(id,name,level,school,ritual,castingtime,components,concentration,source,description,athigherlevelsdescription) 
+COPY Spells(id,name,level,school,ritual,castingtime,components,concentration,source,description,athigherlevelsdescription) 
 FROM 'D:\Projects\Astral Plane Java\AstralPlane\src\main\resources\db\data\SpellListCSV.csv' DELIMITER ',' CSV HEADER;

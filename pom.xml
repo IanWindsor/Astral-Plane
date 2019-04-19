@@ -9,7 +9,7 @@
 	<packaging>jar</packaging>
 
 	<name>astralplane</name>
-	<description>Demo project for Spring Boot</description>
+	<description>Dungeons and Dragons web applications</description>
 
 	<parent>
 		<groupId>org.springframework.boot</groupId>
@@ -67,17 +67,7 @@
 		    <groupId>org.flywaydb</groupId>
 		    <artifactId>flyway-core</artifactId>
 		</dependency>
-		
-		<!-- <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-security</artifactId>
-        </dependency>
-		
-		<dependency>
-            <groupId>org.springframework.security</groupId>
-            <artifactId>spring-security-test</artifactId>
-            <scope>test</scope>
-        </dependency> -->
+	
 	</dependencies>
 
 	<build>
