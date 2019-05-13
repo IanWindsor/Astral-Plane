@@ -6,7 +6,7 @@ I decided to use PostgreSQL as my database since I had never worked with it befo
 
 The rest of the application is mostly boiler plate code with very ugly UI work using Bootstrap and Thymeleaf. This was my first time using Bootstrap and I was impressed with the amount it helped me accomplish. I look forward to working more with it.
 
-**Tools/Tech Used**
+**Tech Stack**
 *  Spring Boot
 *  PostrgeSQL
 *  Hibernate
